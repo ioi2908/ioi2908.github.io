@@ -1,9 +1,7 @@
 
 import os
 import dj_database_url
-# import django_heroku
 import django_heroku
-
 import env
 
 
@@ -127,4 +125,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
