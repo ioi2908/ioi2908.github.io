@@ -9,7 +9,7 @@
 # Directories #
 ###############
 logs/
-env.py
+virtualenv/env.py
 
 *.log
 local_settings.py

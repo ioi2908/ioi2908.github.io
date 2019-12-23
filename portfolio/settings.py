@@ -1,8 +1,9 @@
 
 import os
+from virtualenv import env
 import dj_database_url
 import django_heroku
-import env
+
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
