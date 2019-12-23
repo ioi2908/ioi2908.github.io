@@ -33,14 +33,14 @@ section {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 2px solid #ffeacb;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: center;
   justify-content: center;
-  color: #fff;
+  color: #ffeacb;
   font-size: 0.8rem;
   position: absolute;
   bottom: 3rem;
@@ -106,11 +106,11 @@ section {
 }
 
 .bg-gray {
-  background: #eee !important;
+  background: #eeb145 !important;
 }
 
 .text-gray {
-  color: #999 !important;
+  color: #998723 !important;
 }
 
 .social-link {
@@ -431,7 +431,7 @@ STYLE SWITCHER FOR DEMO
 }
 
 .btn-link:hover {
-  color: #348e7b;
+  color: #8e1906;
   text-decoration: underline;
 }
 
