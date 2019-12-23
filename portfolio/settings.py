@@ -1,16 +1,20 @@
 
 import os
-import env
 import dj_database_url
+# import django_heroku
 import django_heroku
 
+import env
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 SECRET_KEY = env.SECRET_KEY
 
 DEBUG = env.DEBUG
 
-ALLOWED_HOSTS = ['ioi2908.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['maentechie.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -23,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'contact'
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -36,7 +40,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -105,18 +110,21 @@ USE_TZ = True
 # for staticfiles
 
 STATIC_URL = '/static/'
-STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 BASE_DIR = os.path.join(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 
 # for db
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from contact.models import Contact
-from django.contrib import messages
 
 
 def home(request):
