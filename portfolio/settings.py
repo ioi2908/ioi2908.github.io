@@ -1,6 +1,6 @@
 
 import os
-# from virtualenv import env
+from virtualenv import env
 import dj_database_url
 import django_heroku
 
@@ -9,11 +9,11 @@ import django_heroku
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# SECRET_KEY = env.SECRET_KEY
-SECRET_KEY = 'tryingTheKey'
+SECRET_KEY = env.SECRET_KEY
 
-# DEBUG = env.DEBUG
-DEBUG = True
+
+DEBUG = env.DEBUG
+
 
 ALLOWED_HOSTS = ['maentechie.herokuapp.com', '127.0.0.1']
 
@@ -111,16 +111,17 @@ USE_TZ = True
 # for staticfiles
 
 STATIC_URL = '/static/'
-
+MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 BASE_DIR = os.path.join(os.path.abspath(__file__))
 
 
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
