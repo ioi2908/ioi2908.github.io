@@ -1,6 +1,6 @@
 
 import os
-from virtualenv import env
+# from virtualenv import env
 import dj_database_url
 import django_heroku
 
@@ -9,9 +9,11 @@ import django_heroku
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-SECRET_KEY = env.SECRET_KEY
+# SECRET_KEY = env.SECRET_KEY
+SECRET_KEY = 'tryingTheKey'
 
-DEBUG = env.DEBUG
+# DEBUG = env.DEBUG
+DEBUG = True
 
 ALLOWED_HOSTS = ['maentechie.herokuapp.com', '127.0.0.1']
 
@@ -112,10 +114,10 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 BASE_DIR = os.path.join(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -126,4 +128,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
